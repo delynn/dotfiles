@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Ryan Bates Dot Files
 
 These are config files to set up a system the way I like it. It now uses [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh). If you would like to see my old, custom Bash and ZSH config, check out [this branch](https://github.com/ryanb/dotfiles/tree/custom-bash-zsh)
@@ -70,3 +71,7 @@ chsh -s /bin/bash # change back to Bash if you want
 ```
 
 Then open a new terminal window to see the effects.
+=======
+dotfiles
+========
+>>>>>>> b115cc121266d9cd2288add88b1e425bd8ba691f
