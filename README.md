@@ -1,17 +1,15 @@
-<<<<<<< HEAD
-# Ryan Bates Dot Files
+# DeLynn Berry Dot Files
 
-These are config files to set up a system the way I like it. It now uses [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh). If you would like to see my old, custom Bash and ZSH config, check out [this branch](https://github.com/ryanb/dotfiles/tree/custom-bash-zsh)
-
-I am running on Mac OS X, but it will likely work on Linux as well.
-
+These are config files to set up a system just the way I like it.
 
 ## Installation
 
-Run the following commands in your terminal. It will prompt you before it does anything destructive. Check out the [Rakefile](https://github.com/ryanb/dotfiles/blob/custom-bash-zsh/Rakefile) to see exactly what it does.
+Run the following commands in your terminal. It will prompt you before it does
+anything destructive. Check out the [Rakefile](https://github.com/ryanb/dotfiles/blob/custom-bash-zsh/Rakefile)
+to see exactly what it does.
 
 ```terminal
-git clone git://github.com/ryanb/dotfiles ~/.dotfiles
+git clone git://github.com/delynn/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 rake install
 ```
@@ -20,12 +18,12 @@ After installing, open a new terminal window to see the effects.
 
 Feel free to customize the .zshrc file to match your preference.
 
-
 ## Features
 
-Many of the following features are added through the "rbates" Oh My ZSH plugin.
+Many of the following features are added through the "berryd" Oh My ZSH plugin.
 
-I normally place all of my coding projects in ~/code, so this directory can easily be accessed (and tab completed) with the "c" command.
+I normally place all of my coding projects in ~/code, so this directory can easily
+be accessed (and tab completed) with the "c" command.
 
 ```terminal
 c railsca<tab>
@@ -71,7 +69,3 @@ chsh -s /bin/bash # change back to Bash if you want
 ```
 
 Then open a new terminal window to see the effects.
-=======
-dotfiles
-========
->>>>>>> b115cc121266d9cd2288add88b1e425bd8ba691f
