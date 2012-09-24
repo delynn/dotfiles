@@ -6,13 +6,13 @@ h() { cd ~/$1; }
 _h() { _files -W ~/ -/; }
 compdef _h h
 
-export EDITOR='subl'
+export EDITOR='mate -w'
 
 # autocorrect is more annoying than helpful
 unsetopt correct_all
 
 # Editor
-alias  	  mate='subl'
+alias     mate='mate -w'
 
 # Git
 alias        g='git'
@@ -29,7 +29,9 @@ alias     tarb='tar xjvf'
 
 # Bundler
 alias        b='bundle'
+alias       bi='bundle install --binstubs'
 alias       bo='bundle open'
+alias       bs='bundle show'
 
 # Rails 2
 alias       ss='./script/server'
@@ -42,20 +44,13 @@ alias      rst='touch tmp/restart.txt'
 
 # PS
 alias       ps='ps aux'
-alias      psg='ps aux | grep '
+alias      psg='ps | grep '
 
 # OS X
 alias dsunhook="find . -name '.DS_Store' -exec rm -rf {} \;"
 
 # Miscellaneous
 alias   reload='. ~/.profile'
-
-# Directory Aliases
-alias     code='cd ~/code'
-alias    coder='cd ~/code/rails'
-alias    codeg='cd ~/code/git'
-alias    codey='cd ~/code/ruby'
-alias   codepw='cd ~/code/rails/pinnacol-www'
 
 # Tail
 alias       tf='tail -f '
