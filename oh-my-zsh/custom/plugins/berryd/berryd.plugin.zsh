@@ -29,13 +29,10 @@ alias     tarb='tar xjvf'
 
 # Bundler
 alias        b='bundle'
+alias       be='bundle exec'
 alias       bi='bundle install --binstubs'
 alias       bo='bundle open'
 alias       bs='bundle show'
-
-# Rails 2
-alias       ss='./script/server'
-alias       sc='./script/console'
 
 # Rails 3
 alias       rs='./script/rails server'
@@ -51,10 +48,13 @@ alias dsunhook="find . -name '.DS_Store' -exec rm -rf {} \;"
 
 # Miscellaneous
 alias   reload='. ~/.profile'
+alias    guard='be guard'
 
 # Tail
 alias       tf='tail -f '
-alias     tlog='tail -n 300 -f ./log/development.log'
+alias     tlog='tf ./log/development.log -n 300'
+alias    taild='tlog'
+alias    tailt='tf ./log/test.log -n 300'
 
 # add plugin's bin directory to path
 export PATH="$(dirname $0)/bin:$PATH"
