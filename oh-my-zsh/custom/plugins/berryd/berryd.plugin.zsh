@@ -6,13 +6,13 @@ h() { cd ~/$1; }
 _h() { _files -W ~/ -/; }
 compdef _h h
 
-export EDITOR='mate -w'
+export EDITOR='mate'
 
 # autocorrect is more annoying than helpful
 unsetopt correct_all
 
 # Editor
-alias     mate='mate -w'
+alias     mate='mate -a'
 
 # Git
 alias        g='git'
@@ -33,6 +33,15 @@ alias       be='bundle exec'
 alias       bi='bundle install --binstubs'
 alias       bo='bundle open'
 alias       bs='bundle show'
+alias       bu='bundle update'
+
+# Powder
+alias       pd='powder'
+alias      pdd='powder down'
+alias      pdu='powder up'
+alias      pdl='powder link'
+alias     pdul='powder unlink'
+alias      pdr='powder restart'
 
 # Rails 3
 alias       rs='./script/rails server'

@@ -5,7 +5,7 @@ desc "install the dot files into user's home directory"
 task :install do
   install_oh_my_zsh
   switch_to_zsh
-  replace_all = true
+  replace_all = false
   files = Dir['*'] - %w[Rakefile README.md LICENSE oh-my-zsh]
   files << "oh-my-zsh/custom/plugins/berryd"
   files << "oh-my-zsh/custom/berryd.zsh-theme"
