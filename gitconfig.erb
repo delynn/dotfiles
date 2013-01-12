@@ -1,6 +1,6 @@
 [user]
-	name =  <%= print(" Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
-	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
+  name =  <%= print(" Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
+  email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
 
 [alias]
   a       = add
@@ -64,7 +64,7 @@
   untracked = blue bold
 
 [format]
-	pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
+  pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
 
 [merge]
   tool = opendiff
@@ -75,11 +75,10 @@
   default = current
 
 [github]
-	 user = <%= print(" GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
-	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
+   user = <%= print(" GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
 
 [pivotal]
   full-name = <%= print("     Pivotal Name: "); STDOUT.flush; STDIN.gets.chomp %>
   api-token = <%= print("Pivotal API Token: "); STDOUT.flush; STDIN.gets.chomp %>
   only-mine = true
-  integration-branch = staging
+  integration-branch = master
