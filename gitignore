@@ -50,3 +50,6 @@ tmtags
 *.un~
 Session.vim
 .netrwhist
+
+# Rbenv
+.ruby-version
