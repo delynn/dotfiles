@@ -42,6 +42,7 @@ alias       be='bundle exec'
 alias       bi='bundle install --binstubs'
 alias       bo='bundle open'
 alias       bs='bundle show'
+alias       bu='bundle update'
 
 # Rails 3
 alias       rs='./script/rails server'
