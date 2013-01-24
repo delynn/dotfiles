@@ -14,9 +14,9 @@ autoload -U colors
 colors
 setopt prompt_subst
 
-plugins=(brew git-flow rails3 rvm textmate berryd)
+plugins=(brew git-hubflow pow powder rails3 sublime textmate berryd)
 
-export PATH="$HOME/bin:$HOME/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
+export PATH="./bin:$HOME/bin:$HOME/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
 

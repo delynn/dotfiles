@@ -6,13 +6,22 @@ h() { cd ~/$1; }
 _h() { _files -W ~/ -/; }
 compdef _h h
 
-export EDITOR='mate'
+ruby-prompt(){
+  if (( $+commands[rbenv] ))
+  then
+    echo "$(rbenv version | awk '{print $1}')"
+  else
+    echo ""
+  fi
+}
+
+export EDITOR='mate -w'
 
 # autocorrect is more annoying than helpful
 unsetopt correct_all
 
 # Editor
-alias     mate='mate -a'
+alias        m='mate -a'
 
 # Git
 alias        g='git'
@@ -49,14 +58,14 @@ alias       rc='./script/rails console'
 alias      rst='touch tmp/restart.txt'
 
 # PS
-alias       ps='ps aux'
-alias      psg='ps | grep '
+alias      psa='ps aux'
+alias      psg='psa | grep '
 
 # OS X
 alias dsunhook="find . -name '.DS_Store' -exec rm -rf {} \;"
 
 # Miscellaneous
-alias   reload='. ~/.profile'
+alias   reload='. ~/.zshrc'
 alias    guard='be guard'
 
 # Tail

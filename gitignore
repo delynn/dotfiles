@@ -1,3 +1,35 @@
+# Archive
+# It's better to unpack these files and commit the raw source because
+# git has its own built in compression methods.
+*.7z
+*.bzip
+*.bz2
+*.gz
+*.jar
+*.lzma
+*.rar
+*.xz
+*.zip
+
+# packing-only formats
+*.iso
+*.tar
+
+# package management formats
+*.deb
+*.dmg
+*.egg
+*.gem
+*.rpm
+*.xpi
+
+# Bundler binstubs
+/bin/
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
 # OS X
 .DS_Store
 .svn
@@ -5,28 +37,26 @@
 Icon?
 *~
 
-# Thumbnails
-._*
+# Pow and Powder config
+/.pow*
 
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
+# RVM and rbenv
+/.rvmrc
+/.ruby-version
+
+# SublimeText project files
+*.sublime-workspace
 
 # TextMate
 *.tmproj
 *.tmproject
 tmtags
 
-# Archive
-# It's better to unpack these files and commit the raw source because
-# git has its own built in compression methods.
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.tar.gz
-*.zip
-*.bzip
+# Thumbnails
+._*
+
+# VIM
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
