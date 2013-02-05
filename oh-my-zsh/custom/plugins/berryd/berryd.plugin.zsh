@@ -15,13 +15,16 @@ ruby-prompt(){
   fi
 }
 
-export EDITOR='mate -w'
+export EDITOR='subl -w'
 
 # autocorrect is more annoying than helpful
 unsetopt correct_all
 
 # Editor
+alias        e='subl -n .'
 alias        m='mate -a'
+alias        s='subl -n'
+alias     mate='s'
 
 # Git
 alias        g='git'
