@@ -47,6 +47,14 @@ alias       bo='bundle open'
 alias       bs='bundle show'
 alias       bu='bundle update'
 
+# Powder
+alias       pd='powder'
+alias      pdd='powder down'
+alias      pdu='powder up'
+alias      pdl='powder link'
+alias     pdul='powder unlink'
+alias      pdr='powder restart'
+
 # Rails 3
 alias       rs='./script/rails server'
 alias       rc='./script/rails console'
@@ -60,7 +68,7 @@ alias      psg='psa | grep '
 alias dsunhook="find . -name '.DS_Store' -exec rm -rf {} \;"
 
 # Miscellaneous
-alias   reload='. ~/.profile'
+alias   reload='. ~/.zshrc'
 alias    guard='be guard'
 
 # Tail
