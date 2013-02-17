@@ -15,7 +15,7 @@ ruby-prompt(){
   fi
 }
 
-export EDITOR='subl -w'
+export EDITOR='subl -n'
 
 # autocorrect is more annoying than helpful
 unsetopt correct_all
