@@ -22,7 +22,6 @@ unsetopt correct_all
 
 # Editor
 alias        e='subl -n .'
-alias        m='mate -a'
 alias        s='subl -n'
 alias     mate='s'
 
