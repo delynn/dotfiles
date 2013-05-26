@@ -14,11 +14,12 @@ autoload -U colors
 colors
 setopt prompt_subst
 
-plugins=(brew git-hubflow pow powder rails3 sublime textmate berryd)
+plugins=(brew git-hubflow pow powder rails3 rails4 rbenv sublime berryd)
 
 export PATH="./bin:$HOME/bin:$HOME/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
+source /opt/boxen/env.sh
 
 unsetopt correct_all
 
