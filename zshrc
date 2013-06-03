@@ -1,5 +1,5 @@
 ZSH=$HOME/src/oh-my-zsh
-ZSH_THEME="berryd"
+ZSH_THEME="delynn"
 CASE_SENSITIVE="true"
 
 # Don't use sudo when installing a gem via Rake
@@ -14,7 +14,7 @@ autoload -U colors
 colors
 setopt prompt_subst
 
-plugins=(brew git-hubflow pow powder rails3 rails4 rbenv sublime berryd)
+plugins=(brew git-hubflow pow powder rails3 rails4 rbenv sublime delynn)
 
 export PATH="./bin:$HOME/bin:$HOME/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 
