@@ -65,6 +65,7 @@ alias      psg='psa | grep '
 
 # OS X
 alias dsunhook="find . -name '.DS_Store' -exec rm -rf {} \;"
+alias     logs="find ~ -name '*.log' -print0 | xargs -0 -L1 stat -f'%z %N' | sort -rn | tee fat-logfiles.txt | head"
 
 # Miscellaneous
 alias   reload='. ~/.zshrc'
