@@ -5,12 +5,12 @@ These are config files to set up a system just the way I like it.
 ## Installation
 
 Run the following commands in your terminal. It will prompt you before it does
-anything destructive. Check out the [Rakefile](https://github.com/ryanb/dotfiles/blob/custom-bash-zsh/Rakefile)
+anything destructive. Check out the [Rakefile](https://github.com/delynn/dotfiles/blob/master/Rakefile)
 to see exactly what it does.
 
 ```terminal
-git clone git://github.com/delynn/dotfiles ~/.dotfiles
-cd ~/.dotfiles
+mkdir ~/src && cd ~/src && git clone git://github.com/delynn/dotfiles
+cd ~/src/dotfiles
 rake install
 ```
 
@@ -20,9 +20,9 @@ Feel free to customize the .zshrc file to match your preference.
 
 ## Features
 
-Many of the following features are added through the "berryd" Oh My ZSH plugin.
+Many of the following features are added through the "delynn" Oh My ZSH plugin.
 
-I normally place all of my coding projects in ~/code, so this directory can easily
+I normally place all of my coding projects in ~/src, so this directory can easily
 be accessed (and tab completed) with the "c" command.
 
 ```terminal
