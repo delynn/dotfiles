@@ -1,6 +1,6 @@
 [user]
-                name = <%= print("         Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
-               email = <%= print("        Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
+                name = DeLynn Berry
+               email = delynn@gmail.com
 
 [alias]
              a       = add
@@ -75,10 +75,4 @@
              default = current
 
 [github]
-                user = <%= print("   GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
-
-[pivotal]
-           full-name = <%= print("      Pivotal Name: "); STDOUT.flush; STDIN.gets.chomp %>
-           api-token = <%= print(" Pivotal API Token: "); STDOUT.flush; STDIN.gets.chomp %>
-           only-mine = true
-  integration-branch = master
+                user = delynn
