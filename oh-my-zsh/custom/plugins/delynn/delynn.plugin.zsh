@@ -23,7 +23,6 @@ unsetopt correct_all
 # Editor
 alias        e='subl -n .'
 alias        s='subl -n'
-alias     mate='s'
 
 # Git
 alias        g='git'
@@ -32,7 +31,6 @@ alias        g='git'
 alias      lsa='ls -lah'
 alias        l='ls -la'
 alias       ll='ls -l'
-alias       sl=ls # often screw this up
 
 # Tar
 alias     targ='tar xzvf'
