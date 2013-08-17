@@ -40,6 +40,7 @@ alias     tarb='tar xjvf'
 
 # Bundler
 alias        b='bundle'
+alias       bc='bundle console'
 alias       be='bundle exec'
 alias       bi='bundle install --binstubs'
 alias       bo='bundle open'
