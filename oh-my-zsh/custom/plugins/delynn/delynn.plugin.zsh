@@ -21,8 +21,8 @@ export EDITOR='subl -n'
 unsetopt correct_all
 
 # Editor
-alias        e='subl -n .'
-alias        s='subl -n'
+alias        s='st -n'
+alias       ss='st -n .'
 
 # Git
 alias        g='git'
