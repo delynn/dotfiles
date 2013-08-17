@@ -42,6 +42,7 @@
           whitespace = space-before-tab, trailing-space
               editor = s
             autocrlf = input
+               pager = less -+$LESS -FRX
 
 [color]
                   ui = auto
