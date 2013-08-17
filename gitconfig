@@ -36,11 +36,11 @@
       autosetupmerge = true
 
 [core]
-        excludesfile = <%= ENV['HOME'] %>/.gitignore
+        excludesfile = ~/.gitignore
             filemode = true
     logallrefupdates = true
           whitespace = space-before-tab, trailing-space
-              editor = subl -n
+              editor = s
             autocrlf = input
 
 [color]
