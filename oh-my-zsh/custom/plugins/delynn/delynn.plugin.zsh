@@ -72,9 +72,9 @@ alias    guard='be guard'
 
 # Tail
 alias       tf='tail -f '
-alias     tlog='tf ./log/development.log -n 300'
+alias     tlog='tf -n 300 log/development.log'
 alias    taild='tlog'
-alias    tailt='tf ./log/test.log -n 300'
+alias    tailt='tf -n 300 log/test.log'
 
 # add plugin's bin directory to path
 export PATH="$(dirname $0)/bin:$PATH"
