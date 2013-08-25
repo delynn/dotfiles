@@ -15,7 +15,9 @@
                   co = checkout
                  cob = checkout -b
                 cobt = checkout --track -b
+                  cp = cherry-pick
                    d = diff
+                  ds = diff --staged
                 done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1} && rake && git push
                   ir = !git rebase -i origin/master
                    l = log --oneline
