@@ -8,9 +8,9 @@ task :install do
   install_oh_my_zsh
   switch_to_zsh
 
-  files = Dir['*'] - %w[Rakefile README.md LICENSE oh-my-zsh]
-  files << 'oh-my-zsh/custom/plugins/berryd'
-  files << 'oh-my-zsh/custom/berryd.zsh-theme'
+  files = Dir['*'] - %w[.gitignore Rakefile README.md LICENSE oh-my-zsh]
+  files << 'oh-my-zsh/custom/plugins/delynn'
+  files << 'oh-my-zsh/custom/delynn.zsh-theme'
 
   files.each do |file|
     system %Q{mkdir -p "$HOME/.#{File.dirname(file)}"} if file =~ /\//
@@ -75,14 +75,14 @@ def switch_to_zsh
 end
 
 def install_oh_my_zsh
-  if File.exist?(File.join(ENV['HOME'], '.oh-my-zsh'))
-    puts 'found ~/.oh-my-zsh'
+  if File.exist?(File.join(ENV['HOME'], 'src', 'oh-my-zsh'))
+    puts 'found ~/src/oh-my-zsh'
   else
     print 'install oh-my-zsh? [ynq] '
     case $stdin.gets.chomp
     when 'y'
       puts 'installing oh-my-zsh'
-      system %Q{git clone https://github.com/robbyrussell/oh-my-zsh.git "$HOME/.oh-my-zsh"}
+      system %Q{mkdir -p "$HOME/src" && git clone https://github.com/robbyrussell/oh-my-zsh.git "$HOME/src/oh-my-zsh"}
     when 'q'
       exit
     else
