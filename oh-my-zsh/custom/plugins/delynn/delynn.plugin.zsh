@@ -21,9 +21,8 @@ export EDITOR='subl -n'
 unsetopt correct_all
 
 # Editor
-alias        e='subl -n .'
-alias        s='subl -n'
-alias     mate='s'
+alias        s='st -n'
+alias       ss='st -n .'
 
 # Git
 alias        g='git'
@@ -32,7 +31,6 @@ alias        g='git'
 alias      lsa='ls -lah'
 alias        l='ls -la'
 alias       ll='ls -l'
-alias       sl=ls # often screw this up
 
 # Tar
 alias     targ='tar xzvf'
@@ -40,6 +38,7 @@ alias     tarb='tar xjvf'
 
 # Bundler
 alias        b='bundle'
+alias       bc='bundle console'
 alias       be='bundle exec'
 alias       bi='bundle install --binstubs'
 alias       bo='bundle open'
@@ -73,9 +72,9 @@ alias    guard='be guard'
 
 # Tail
 alias       tf='tail -f '
-alias     tlog='tf ./log/development.log -n 300'
+alias     tlog='tf -n 300 log/development.log'
 alias    taild='tlog'
-alias    tailt='tf ./log/test.log -n 300'
+alias    tailt='tf -n 300 log/test.log'
 
 # add plugin's bin directory to path
 export PATH="$(dirname $0)/bin:$PATH"
