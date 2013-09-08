@@ -10,6 +10,7 @@
                   br = branch
                    c = commit -m
                   ca = commit --amend -m
+                 can = commit --amend --no-edit
                   ci = commit
              cleanup = !git remote prune origin && git gc && git clean -dfx && git stash clear
                   co = checkout
