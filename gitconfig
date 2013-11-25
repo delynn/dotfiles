@@ -8,6 +8,7 @@
                   ap = add -p
                    b = branch -v -a
                   br = branch
+                 brm = !sh -c 'git branch -D $1 && git push origin :$1' -
                    c = commit -m
                   ca = commit --amend -m
                  can = commit --amend --no-edit
@@ -27,7 +28,6 @@
                   ph = push heroku master
              publish = !git checkout master && git pull && git checkout dev && git rebase master && git checkout master && git merge dev && git wtf
                    r = remote -v
-                 rmb = !sh -c 'git branch -D $1 && git push origin :$1' -
                    s = status -sb
                   st = status
                   up = !git fetch origin && git rebase origin/master
