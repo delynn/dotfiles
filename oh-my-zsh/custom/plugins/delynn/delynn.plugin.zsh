@@ -28,36 +28,13 @@ alias       ss='st -n .'
 alias        g='git'
 
 # List direcory contents
-alias      lsa='ls -lah'
 alias        l='ls -la'
 alias       ll='ls -l'
+alias      lsa='ls -lah'
 
 # Tar
 alias     targ='tar xzvf'
 alias     tarb='tar xjvf'
-
-# Bundler
-alias        b='bundle'
-alias       bc='bundle console'
-alias       be='bundle exec'
-alias       bi='bundle install --binstubs'
-alias       bl='bundle list'
-alias       bo='bundle open'
-alias       bs='bundle show'
-alias       bu='bundle update'
-
-# Powder
-alias       pd='powder'
-alias      pdd='powder down'
-alias      pdu='powder up'
-alias      pdl='powder link'
-alias     pdul='powder unlink'
-alias      pdr='powder restart'
-
-# Rails 3
-alias       rs='./script/rails server'
-alias       rc='./script/rails console'
-alias      rst='touch tmp/restart.txt'
 
 # PS
 alias      psa='ps aux'
@@ -70,12 +47,6 @@ alias     logs="find ~ -name '*.log' -print0 | xargs -0 -L1 stat -f'%z %N' | sor
 # Miscellaneous
 alias   reload='. ~/.zshrc'
 alias    guard='be guard'
-
-# Tail
-alias       tf='tail -f '
-alias     tlog='tf -n 300 log/development.log'
-alias    taild='tlog'
-alias    tailt='tf -n 300 log/test.log'
 
 # add plugin's bin directory to path
 export PATH="$(dirname $0)/bin:$PATH"
