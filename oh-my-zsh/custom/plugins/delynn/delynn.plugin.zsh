@@ -20,10 +20,6 @@ export EDITOR='subl -n'
 # autocorrect is more annoying than helpful
 unsetopt correct_all
 
-# Editor
-alias        s='st -n'
-alias       ss='st -n .'
-
 # Git
 alias        g='git'
 
