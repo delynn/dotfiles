@@ -18,8 +18,8 @@ plugins=(brew bundler common-aliases git-hubflow history rand-quote rails rbenv 
 
 export PATH="$HOME/bin:$HOME/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 
-if [[ -a /opt/boxen/env.sh ]]; then source /opt/boxen/env.sh; fi
-
 source $ZSH/oh-my-zsh.sh
+
+if [[ -a /opt/boxen/env.sh ]]; then source /opt/boxen/env.sh; fi
 
 quote
