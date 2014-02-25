@@ -24,7 +24,8 @@
                   ir = !git rebase -i origin/master
                    l = log --oneline
                 log1 = log -1 --oneline
-                   m = merge
+                   m = merge --no-commit
+                  mo = !git merge --no-commit origin/$1
                   ms = merge --squash
                    p = push
                   ph = push heroku master
