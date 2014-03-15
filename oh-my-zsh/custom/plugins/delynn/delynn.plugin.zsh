@@ -15,10 +15,14 @@ ruby-prompt(){
   fi
 }
 
-export EDITOR='subl -n'
+export EDITOR='atom'
 
 # autocorrect is more annoying than helpful
 unsetopt correct_all
+
+# Editor
+alias        a='atom -n'
+alias        s='atom -n'
 
 # Git
 alias        g='git'
