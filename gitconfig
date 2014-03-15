@@ -22,7 +22,8 @@
                   ds = diff --staged
                 done = !git fetch && git rebase origin/master && git checkout master && git merge @{-1} && rake && git push
                   ir = !git rebase -i origin/master
-                   l = log -1 --oneline
+                   l = log --oneline
+                log1 = log -1 --oneline
                    m = merge --no-commit
                   mo = !git merge --no-commit origin/$1
                   ms = merge --squash
