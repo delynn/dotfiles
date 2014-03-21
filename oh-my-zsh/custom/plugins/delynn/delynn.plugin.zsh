@@ -28,9 +28,9 @@ alias        s='atom -n'
 alias        g='git'
 
 # List direcory contents
-alias        l='ls -la'
-alias       ll='ls -l'
-alias      lsa='ls -lah'
+alias        l='ls -lac'
+alias       ll='ls -lc'
+alias      lsa='ls -lahc'
 
 # Tar
 alias     targ='tar xzvf'
