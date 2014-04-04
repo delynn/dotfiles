@@ -15,22 +15,22 @@ ruby-prompt(){
   fi
 }
 
-export EDITOR='subl -n'
+export EDITOR='atom'
 
 # autocorrect is more annoying than helpful
 unsetopt correct_all
 
 # Editor
-alias        s='st -n'
-alias       ss='st -n .'
+alias        a='atom -n'
+alias        s='atom -n'
 
 # Git
 alias        g='git'
 
 # List direcory contents
-alias        l='ls -la'
-alias       ll='ls -l'
-alias      lsa='ls -lah'
+alias        l='ls -lac'
+alias       ll='ls -lc'
+alias      lsa='ls -lahc'
 
 # Tar
 alias     targ='tar xzvf'
