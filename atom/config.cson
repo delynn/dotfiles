@@ -1,20 +1,24 @@
 'exception-reporting':
-  'userId': '4f6c2a58-65cc-e044-918d-713398aecd56'
+  'userId': 'd301e3e9-8d24-83c0-c770-659175060777'
 'release-notes':
-  'viewedVersion': '0.61.0'
+  'viewedVersion': '0.75.0'
 'welcome':
   'showOnStartup': false
 'metrics':
-  'userId': 'cf3f7b7f285a694e7d30c4101888e06c2eef3beb'
+  'userId': '74273fc4e0ca1dfa13f28c9dc7725f34affbd4b3'
 'editor':
-  'fontSize': 16
+  'fontSize': 13
 'core':
   'themes': [
-    'atom-dark-ui'
-    'atom-dark-syntax'
+    'unity-ui'
+    'base16-railscasts'
   ]
   'ignoredNames': [
     '.git'
     '.svn'
     '.DS_Store'
   ]
+  'projectHome': '/Users/delynn/src'
+'autosave':
+  'enabled': true
+'tree-view': {}
