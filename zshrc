@@ -14,7 +14,7 @@ autoload -U colors
 colors
 setopt prompt_subst
 
-plugins=(brew bundler git-hubflow history rand-quote rails rbenv sublime delynn)
+plugins=(brew git-hubflow history rand-quote rails rbenv sublime delynn)
 
 export PATH="$HOME/bin:$HOME/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 
