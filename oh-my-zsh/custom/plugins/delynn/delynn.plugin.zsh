@@ -44,9 +44,5 @@ alias      psg='psa | grep '
 alias dsunhook="find . -name '.DS_Store' -exec rm -rf {} \;"
 alias     logs="find ~ -name '*.log' -print0 | xargs -0 -L1 stat -f'%z %N' | sort -rn | tee fat-logfiles.txt | head"
 
-# Miscellaneous
-alias   reload='. ~/.zshrc'
-alias    guard='be guard'
-
 # add plugin's bin directory to path
 export PATH="$(dirname $0)/bin:$PATH"
