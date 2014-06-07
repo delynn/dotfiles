@@ -21,5 +21,3 @@ export PATH="$HOME/bin:$HOME/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/s
 source $ZSH/oh-my-zsh.sh
 
 if [[ -a /opt/boxen/env.sh ]]; then source /opt/boxen/env.sh; fi
-
-quote
