@@ -1,7 +1,7 @@
 {
   "name": "ruby-syntax-replacer",
   "main": "./lib/ruby-syntax-replacer",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "Will replace all old Ruby hash syntax with new",
   "activationEvents": [
@@ -22,10 +22,10 @@
     "url": "https://github.com/omegahm/ruby-syntax-replacer/issues"
   },
   "homepage": "https://github.com/omegahm/ruby-syntax-replacer",
-  "_id": "ruby-syntax-replacer@0.2.0",
+  "_id": "ruby-syntax-replacer@0.3.0",
   "dist": {
-    "shasum": "28c24e99d7aebe6db9710dbd5bfbaaf4ba99583d"
+    "shasum": "cf4e75d9a6ffc8c2030f0eac6d66b15302ed12bf"
   },
-  "_resolved": "/var/folders/8h/5wqdnmld1gv3vj19tjv5zd980000gn/T/d-114222-9565-1jzg2ad/package.tgz",
-  "_from": "/var/folders/8h/5wqdnmld1gv3vj19tjv5zd980000gn/T/d-114222-9565-1jzg2ad/package.tgz"
+  "_resolved": "/var/folders/8h/5wqdnmld1gv3vj19tjv5zd980000gn/T/d-11472-64126-p9grwm/package.tgz",
+  "_from": "/var/folders/8h/5wqdnmld1gv3vj19tjv5zd980000gn/T/d-11472-64126-p9grwm/package.tgz"
 }

@@ -7,10 +7,25 @@ toggleQuotes = (editor) ->
 
 toggleQuoteAtPosition = (editor, position) ->
   range = editor.displayBuffer.bufferRangeForScopeAtPosition('.string.quoted', position)
+
+  unless range?
+    # Attempt to match the current invalid region if it is wrapped in quotes
+    # This is useful for languages where changing the quotes makes the range
+    # invalid and so toggling again should properly restore the valid quotes
+    if range = editor.displayBuffer.bufferRangeForScopeAtPosition('.invalid.illegal', position)
+      return unless /^(".*"|'.*')$/.test(editor.getTextInBufferRange(range))
+
   return unless range?
 
   text = editor.getTextInBufferRange(range)
-  quoteCharacter = text[0]
+  [quoteCharacter] = text
+
+  # In Python a string can have a prefix specifying its format. The Python
+  # grammar includes this prefix in the string, and thus we need to exclude
+  # it when toggling quotes
+  prefix = ''
+  [prefix, quoteCharacter] = text if /[uUr]/.test(quoteCharacter)
+
   oppositeQuoteCharacter = getOppositeQuote(quoteCharacter)
   quoteRegex = new RegExp(quoteCharacter, 'g')
   escapedQuoteRegex = new RegExp("\\\\#{quoteCharacter}", 'g')
@@ -19,7 +34,7 @@ toggleQuoteAtPosition = (editor, position) ->
   newText = text
     .replace(oppositeQuoteRegex, "\\#{oppositeQuoteCharacter}")
     .replace(escapedQuoteRegex, quoteCharacter)
-  newText = oppositeQuoteCharacter + newText[1...-1] + oppositeQuoteCharacter
+  newText = prefix + oppositeQuoteCharacter + newText[(1+prefix.length)...-1] + oppositeQuoteCharacter
 
   editor.setTextInBufferRange(range, newText)
 
