@@ -16,7 +16,7 @@
              cleanup = !git remote prune origin && git gc && git clean -dfx && git stash clear
                   co = checkout
                  cob = checkout -b
-                cobt = checkout --track -b
+                 cot = !git checkout -t origin/$1 $1
                   cp = cherry-pick
                    d = diff
                   ds = diff --staged
@@ -26,6 +26,7 @@
                 log1 = log -1 --oneline
                    m = merge --no-commit
                   mo = !git merge --no-commit origin/$1
+              nmerge = !git merge $1 --no-commit --no-ff
                   ms = merge --squash
                    p = push
                   ph = push heroku master
@@ -46,9 +47,9 @@
             filemode = true
     logallrefupdates = true
           whitespace = space-before-tab, trailing-space
-              editor = subl -w
             autocrlf = input
                pager = less -+$LESS -FRX
+	            editor = /usr/bin/env atom --wait
 
 [color]
                   ui = auto
@@ -83,3 +84,5 @@
 
 [github]
                 user = delynn
+                site = https://github.com
+            endpoint = https://api.github.com
