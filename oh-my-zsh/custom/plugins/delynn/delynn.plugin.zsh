@@ -6,7 +6,7 @@ h() { cd ~/$1; }
 _h() { _files -W ~/ -/; }
 compdef _h h
 
-ruby-prompt(){
+function ruby-prompt(){
   if (( $+commands[rbenv] ))
   then
     echo "$(rbenv version | awk '{print $1}')"
@@ -15,7 +15,11 @@ ruby-prompt(){
   fi
 }
 
-export EDITOR='atom'
+function railsn(){
+  cd ~/src
+  rails new $1 -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb
+  cd $1
+}
 
 # autocorrect is more annoying than helpful
 unsetopt correct_all
@@ -43,9 +47,6 @@ alias      psg='psa | grep '
 # OS X
 alias dsunhook="find . -name '.DS_Store' -exec rm -rf {} \;"
 alias     logs="find ~ -name '*.log' -print0 | xargs -0 -L1 stat -f'%z %N' | sort -rn | tee fat-logfiles.txt | head"
-
-# Rails
-alias   railsn="rails new ~/src/$1 -m https://raw.github.com/RailsApps/rails-composer/master/composer.rb"
 
 # Miscellaneous
 alias   reload='. ~/.zshrc'
