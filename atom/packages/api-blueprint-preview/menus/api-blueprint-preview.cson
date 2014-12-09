@@ -1,0 +1,10 @@
+'menu': [
+  'label': 'Packages'
+  'submenu': [
+    'label': 'API Blueprint'
+    'submenu': [
+      'label': 'Toggle Preview'
+      'command': 'api-blueprint-preview:toggle'
+    ]
+  ]
+]
