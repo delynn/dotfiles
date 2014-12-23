@@ -1,11 +1,24 @@
 # DeLynn dotfiles
 
-This is a collection of rake tasks and configuration files to set up a new system the way I like it. Installs the following:
+This is a collection of rake tasks and configuration files to set up a new system the way I like it. We start out by installing [homebrew](http://brew.sh).
 
-* [homebrew](http://brew.sh)
+Then the following home-brew packages are installed:
+
+* [cask](http://caskroom.io)
 * [git](https://github.com/Homebrew/homebrew/blob/master/Library/Formula/git.rb)
 * [rbenv](https://github.com/Homebrew/homebrew/blob/master/Library/Formula/rbenv.rb)
 * [zsh](https://github.com/Homebrew/homebrew/blob/master/Library/Formula/zsh.rb)
+
+Finally, we install the following applications via cask:
+
+* [Atom](https://atom.io)
+* [Backblaze](https://www.backblaze.com)
+* [Dropbox](https://www.dropbox.com)
+* [Google Chrome](https://www.google.com/chrome/)
+* [iTerm2](http://iterm2.com)
+* [Mailplane](http://mailplaneapp.com)
+* [Sublime Text 2](http://www.sublimetext.com/2)
+* [Text Expander](http://smilesoftware.com/TextExpander/index.html)
 
 ## Installation
 
