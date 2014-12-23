@@ -1,22 +1,25 @@
-# DeLynn Berry Dot Files
+# DeLynn dotfiles
 
-These are config files to set up a system just the way I like it.
+This is a collection of rake tasks and configuration files to set up a new system the way I like it. Installs the following:
+
+* [homebrew](http://brew.sh)
+* [git](https://github.com/Homebrew/homebrew/blob/master/Library/Formula/git.rb)
+* [rbenv](https://github.com/Homebrew/homebrew/blob/master/Library/Formula/rbenv.rb)
+* [zsh](https://github.com/Homebrew/homebrew/blob/master/Library/Formula/zsh.rb)
 
 ## Installation
 
-Run the following commands in your terminal. It will prompt you before it does
-anything destructive. Check out the [Rakefile](https://github.com/delynn/dotfiles/blob/master/Rakefile)
-to see exactly what it does.
+Run the following commands in your terminal. Check out the [Rakefile](https://github.com/delynn/dotfiles/blob/master/Rakefile) to see exactly what it does.
 
 ```terminal
-mkdir ~/src && cd ~/src && git clone git://github.com/delynn/dotfiles
+xcode-select --install
+mkdir ~/src
+git clone git://github.com/delynn/dotfiles ~/src/dotfiles
 cd ~/src/dotfiles
 rake install
 ```
 
-After installing, open a new terminal window to see the effects.
-
-Feel free to customize the .zshrc file to match your preference.
+After installing, open a new terminal window to see the effects. Feel free to customize the .zshrc file to match your preference.
 
 ## Features
 
@@ -26,7 +29,7 @@ I normally place all of my coding projects in ~/src, so this directory can easil
 be accessed (and tab completed) with the "c" command.
 
 ```terminal
-c railsca<tab>
+c dot<tab>
 ```
 
 There is also an "h" command which behaves similar, but acts on the home path.
@@ -37,35 +40,19 @@ h doc<tab>
 
 Tab completion is also added to rake and cap commands:
 
-```
+```terminal
 rake db:mi<tab>
 cap de<tab>
 ```
 
 To speed things up, the results are cached in local .rake_tasks~ and .cap_tasks~. It is smart enough to expire the cache automatically in most cases, but you can simply remove the files to flush the cache.
 
-If you're using git, you'll notice the current branch name shows up in the prompt while in a git repository.
-
-There are several features enabled in Ruby's irb including history and completion. Many convenience methods are added as well such as "ri" which can be used to get inline documentation in IRB. See irbrc file for details.
-
-
 ## Uninstall
 
-To remove the dotfile configs, run the following commands. Be certain to double check the contents of the files before removing so you don't lose custom settings.
+To uninstall, run the following command from a terminal window. **Note:** this will reset _everything_ associated with your profile.
 
-```
-unlink ~/.bin
-unlink ~/.gitignore
-unlink ~/.gemrc
-unlink ~/.gvimrc
-unlink ~/.irbrc
-unlink ~/.vim
-unlink ~/.vimrc
-rm ~/.zshrc # careful here
-rm ~/.gitconfig
-rm -rf ~/.dotfiles
-rm -rf ~/.oh-my-zsh
-chsh -s /bin/bash # change back to Bash if you want
+```terminal
+cd ~/src/dotfiles && rake uninstall
 ```
 
 Then open a new terminal window to see the effects.
