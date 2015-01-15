@@ -16,7 +16,7 @@
              cleanup = !git remote prune origin && git gc && git clean -dfx && git stash clear
                   co = checkout
                  cob = checkout -b
-                 cot = !git checkout -t origin/$1 $1
+                 cot = !git checkout -t $1 origin/$1
                   cp = cherry-pick
                    d = diff
                   ds = diff --staged
