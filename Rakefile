@@ -11,7 +11,7 @@ task :cask do
 end
 
 task :cask_packages do
-  cask *%w(atom backblaze dropbox google-chrome iterm2 mailplane sublime-text textexpander)
+  cask *%w(atom backblaze dropbox google-chrome iterm2 mailplane sublime-text textexpander vagrant virtualbox)
 end
 
 desc "install the dot files into user's home directory"
