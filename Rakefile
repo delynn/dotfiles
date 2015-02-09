@@ -11,7 +11,7 @@ task :cask do
 end
 
 task :cask_packages do
-  cask *%w(atom backblaze betterzipql dropbox google-chrome iterm2 mailplane pgadmin3 quicklook-csv quicklook-json qlmarkdown qlstephen sublime-text textexpander vagrant virtualbox wkhtmltopdf)
+  cask *%w(atom backblaze betterzipql dropbox google-chrome iterm2 mailplane pgadmin3 qlcolorcode qlimagesize quicklook-csv quicklook-json qlmarkdown qlstephen sublime-text textexpander vagrant virtualbox wkhtmltopdf)
 end
 
 desc "install the dot files into user's home directory"
