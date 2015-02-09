@@ -1,40 +1,41 @@
-'global':
-  'exception-reporting':
-    'userId': 'd301e3e9-8d24-83c0-c770-659175060777'
-  'release-notes':
-    'viewedVersion': '0.92.0'
-  'welcome':
-    'showOnStartup': false
-  'metrics':
-    'userId': '74273fc4e0ca1dfa13f28c9dc7725f34affbd4b3'
-  'editor':
-    'fontSize': 13
-    'invisibles': {}
-    'normalizeIndentOnPaste': false
-    'showInvisibles': true
-    'showIndentGuide': true
-  'core':
-    'themes': [
-      'unity-ui'
-      'base16-railscasts'
+"*":
+  "exception-reporting":
+    userId: "d301e3e9-8d24-83c0-c770-659175060777"
+  "release-notes":
+    viewedVersion: "0.92.0"
+  welcome:
+    showOnStartup: false
+  metrics:
+    userId: "74273fc4e0ca1dfa13f28c9dc7725f34affbd4b3"
+  editor:
+    fontSize: 13
+    invisibles: {}
+  core:
+    ignoredNames: [
+      ".git"
+      ".svn"
+      ".DS_Store"
     ]
-    'ignoredNames': [
-      '.git'
-      '.svn'
-      '.DS_Store'
+    disabledPackages: [
+      "autocomplete"
+      "api-blueprint-preview"
     ]
-    'projectHome': '/Users/delynn/src'
-  'autosave':
-    'enabled': true
-  'atom-beautify': {}
-  'autocomplete-plus': {}
-'.python.regexp.source':
-  'editor': {}
-'.python.text.traceback':
-  'editor': {}
-'.erb.html.text':
-  'editor': {}
-'.ruby.source':
-  'editor': {}
-'.python.source':
-  'editor': {}
+    themes: [
+      "unity-ui"
+      "base16-railscasts"
+    ]
+    projectHome: "/Users/delynn/src"
+  autosave:
+    enabled: true
+  "autocomplete-plus":
+    autoActivationDelay: 500
+".erb.html.text":
+  editor: {}
+".python.text.traceback":
+  editor: {}
+".python.regexp.source":
+  editor: {}
+".python.source":
+  editor: {}
+".ruby.source":
+  editor: {}
