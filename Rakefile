@@ -3,7 +3,7 @@ require 'erb'
 require 'fileutils'
 
 task :brew_packages do
-  brew *%w(git)
+  brew *%w(ansible git imagemagick postgresql redis)
 end
 
 task :cask do
@@ -11,7 +11,7 @@ task :cask do
 end
 
 task :cask_packages do
-  cask *%w(atom backblaze dropbox google-chrome iterm2 mailplane sublime-text textexpander vagrant virtualbox)
+  cask *%w(atom backblaze dropbox google-chrome iterm2 mailplane pgadmin3 quicklookcsv quicklook-json qlmarkdown qlstephen sublime-text textexpander vagrant virtualbox wkhtmltopdf)
 end
 
 desc "install the dot files into user's home directory"
