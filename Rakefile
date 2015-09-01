@@ -31,7 +31,7 @@ task default: 'install'
 
 task :hidden_files do
   replace_all  = false
-  files        = Dir['*'] - %w[.gitignore Rakefile README.md LICENSE oh-my-zsh]
+  files        = Dir['*'] - %w[.git .gitignore Rakefile README.md LICENSE oh-my-zsh]
 
   files.each do |file|
     system %Q{mkdir -p "$HOME/.#{File.dirname(file)}"} if file =~ /\//
@@ -112,7 +112,7 @@ end
 
 task :zsh do
   if ENV['SHELL'] !~ /zsh/
-    `brew install zsh`
+    brew('zsh')
     zsh = `command -v zsh`
     system %Q{echo '#{zsh}' | sudo tee -a /etc/shells}
     system %Q{chsh -s #{zsh}}
