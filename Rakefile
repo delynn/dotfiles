@@ -31,7 +31,7 @@ task default: 'install'
 
 task :hidden_files do
   replace_all  = false
-  files        = Dir['*'] - %w[.git .gitignore Rakefile README.md LICENSE oh-my-zsh]
+  files        = Dir['*'] - %w[.git .gitignore oh-my-zsh default-gems Rakefile README.md LICENSE]
 
   files.each do |file|
     system %Q{mkdir -p "$HOME/.#{File.dirname(file)}"} if file =~ /\//
@@ -64,7 +64,7 @@ task :homebrew do
   system %Q{ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"}
 end
 
-task link_files: [:hidden_files, :ohmyzsh_files]
+task link_files: [:hidden_files, :ohmyzsh_files, :rbenv_files]
 
 task :ohmyzsh do
   if File.exist?(File.join(ENV['HOME'], 'src', 'oh-my-zsh')) == false
@@ -79,6 +79,10 @@ task :ohmyzsh_files do
   ).each do |file|
     link_file(file, 'src/')
   end
+end
+
+task :rbenv_files do
+  system %Q{ln -s "$PWD/default-gems" "#{`rbenv root`}/default-gems"}
 end
 
 task :ruby do
