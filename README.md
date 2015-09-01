@@ -13,12 +13,18 @@ Finally, we install the following applications via cask:
 
 * [Atom](https://atom.io)
 * [Backblaze](https://www.backblaze.com)
+* [Charles](https://charlesproxy.com)
 * [Dropbox](https://www.dropbox.com)
 * [Google Chrome](https://www.google.com/chrome/)
 * [iTerm2](http://iterm2.com)
 * [Mailplane](http://mailplaneapp.com)
-* [Sublime Text 2](http://www.sublimetext.com/2)
+* [Mojibar](https://github.com/muan/mojibar)
+* [PGAdmin3](http://www.pgadmin.org/download/)
 * [Text Expander](http://smilesoftware.com/TextExpander/index.html)
+* [Slack](https://slack.com/)
+* [Vagrant](https://www.vagrantup.com/)
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+* [A](http://macitbetter.com/BetterZip-Quick-Look-Generator/) [rather](https://code.google.com/p/qlcolorcode/) [large](https://github.com/Nyx0uf/qlImageSize) [collection](https://github.com/p2/quicklook-csv) [of](http://www.sagtau.com/quicklookjson.html) [QuickLook](https://github.com/toland/qlmarkdown) [plugins](https://github.com/whomwah/qlstephen)
 
 ## Installation
 

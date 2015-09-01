@@ -24,6 +24,12 @@ function railsn(){
 # autocorrect is more annoying than helpful
 unsetopt correct_all
 
+# Bundler
+alias       bc='bundler console'
+alias       be='bundler exec'
+alias       bs='bundler show'
+alias       bo='bundler open'
+
 # Editor
 alias        a='atom -n'
 alias        s='atom -n'

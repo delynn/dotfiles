@@ -9,14 +9,13 @@
                    b = branch -v -a
                   br = branch
                  brm = !sh -c 'git branch -D $1 && git push origin :$1' -
-                   c = commit -m
-                  ca = commit --amend -m
+                   c = commit
+                  cm = commit -m
+                  ca = commit --amend
                  can = commit --amend --no-edit
-                  ci = commit
              cleanup = !git remote prune origin && git gc && git clean -dfx && git stash clear
                   co = checkout
                  cob = checkout -b
-                 cot = !git checkout -t $1 origin/$1
                   cp = cherry-pick
                    d = diff
                   ds = diff --staged
@@ -42,15 +41,6 @@
 [branch]
       autosetupmerge = true
 
-[core]
-        excludesfile = ~/.gitignore
-            filemode = true
-    logallrefupdates = true
-          whitespace = space-before-tab, trailing-space
-            autocrlf = input
-               pager = less -+$LESS -FRX
-	            editor = /usr/bin/env atom --wait
-
 [color]
                   ui = auto
 
@@ -70,6 +60,17 @@
                added = yellow
              changed = green bold
            untracked = blue bold
+[commit]
+            template = ~/.gitmessage
+
+[core]
+        excludesfile = ~/.gitignore
+            filemode = true
+    logallrefupdates = true
+          whitespace = space-before-tab, trailing-space
+            autocrlf = input
+               pager = less -+$LESS -FRX
+              editor = /usr/bin/env atom --wait
 
 [format]
               pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset

@@ -13,8 +13,14 @@ begin
 
   Wirble.init
   Wirble.colorize
-rescue LoadError => err
+rescue LoadError => error
   warn "Could not load the wirble gem."
+end
+
+begin
+  require 'irbtools'
+rescue LoadError => error
+  warn "Could not load the irbtools gem."
 end
 
 load "#{ENV['HOME']}/.railsrc" if defined?(Rails)
