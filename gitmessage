@@ -1,0 +1,15 @@
+
+## A 50-character subject line should go above ##
+### The remaining "longer description" should wrap at 72-characters ###
+
+Issue: #
+
+Why is this commit necessary?
+  * 
+
+How does this commit address the issue?
+  * 
+
+What side effects does this commit have?
+  * 
+
