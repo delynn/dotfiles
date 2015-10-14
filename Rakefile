@@ -80,7 +80,7 @@ task :ohmyzsh_files do
 end
 
 task :rbenv_files do
-  system %Q{ln -s "$PWD/default-gems" "#{`rbenv root`}/default-gems"}
+  link_file("default-gems", nil, `rbenv root`.chomp)
 end
 
 task :ruby do
@@ -128,19 +128,19 @@ def cask(*args)
   system %{brew cask install #{args.join(' ')}}
 end
 
-def link_file(file, prefix)
+def link_file(file, prefix, path = ENV["HOME"])
   if file =~ /.erb$/
     puts "generating ~/#{prefix}#{file.sub(/\.erb$/, '')}"
     File.open(File.join(ENV['HOME'], "#{prefix}#{file.sub(/\.erb$/, '')}"), 'w') do |new_file|
       new_file.write ERB.new(File.read(file)).result(binding)
     end
   else
-    puts "linking ~/#{prefix}#{file}"
-    system %Q{ln -s "$PWD/#{file}" "$HOME/#{prefix}#{file}"}
+    puts "linking #{path}/#{prefix}#{file}"
+    system %Q{ln -s "$PWD/#{file}" "#{path}/#{prefix}#{file}"}
   end
 end
 
-def replace_file(file)
-  system %Q{rm -rf "$HOME/.#{file.sub(/\.erb$/, '')}"}
+def replace_file(file, prefix = ".", path = ENV["HOME"])
+  system %Q{rm -rf "#{path}/#{prefix}#{file.sub(/\.erb$/, '')}"}
   link_file(file)
 end
