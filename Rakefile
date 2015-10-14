@@ -3,7 +3,7 @@ require 'erb'
 require 'fileutils'
 
 task :brew_packages do
-  brew *%w(ansible git imagemagick postgresql redis)
+  brew *%w(git imagemagick parity postgresql redis)
 end
 
 task :cask do
@@ -15,18 +15,17 @@ task :cask_packages do
     atom
     backblaze betterzipql
     dropbox
-    google-chrome
     iterm2
     mailplane mojibar
     pgadmin3
     qlcolorcode qlimagesize quicklook-csv quicklook-json qlmarkdown qlstephen
-    textexpander
+    time-sink textexpander
     vagrant virtualbox
   )
 end
 
 desc "install the dot files into user's home directory"
-task install: [:homebrew, :zsh, :ohmyzsh, :link_files, :ruby, :brew_packages, :cask, :cask_packages]
+task install: [:homebrew, :zsh, :ohmyzsh, :ruby, :link_files, :brew_packages, :cask, :cask_packages]
 task default: 'install'
 
 task :hidden_files do
@@ -34,9 +33,8 @@ task :hidden_files do
   files        = Dir['*'] - %w[.git .gitignore oh-my-zsh default-gems Rakefile README.md LICENSE]
 
   files.each do |file|
-    system %Q{mkdir -p "$HOME/.#{File.dirname(file)}"} if file =~ /\//
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}"))
-      if File.identical? file, File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}")
+      if File.identical?(file, File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}"))
         puts "identical ~/.#{file.sub(/\.erb$/, '')}"
       elsif replace_all
         replace_file(file)
@@ -87,7 +85,6 @@ end
 
 task :ruby do
   brew *%w(rbenv ruby-build rbenv-default-gems rbenv-gem-rehash)
-  system %Q{echo 'bundler' >> `rbenv root`/default-gems}
 end
 
 task :uninstall do
