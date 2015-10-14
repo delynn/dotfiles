@@ -3,7 +3,7 @@ require 'erb'
 require 'fileutils'
 
 task :brew_packages do
-  brew *%w(git heroku imagemagick parity postgresql redis)
+  brew *%w(awscli git heroku imagemagick parity postgresql redis)
 end
 
 task :cask do
