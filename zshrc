@@ -1,26 +1,20 @@
-ZSH=$HOME/src/oh-my-zsh
-ZSH_THEME="delynn"
-CASE_SENSITIVE="true"
-
-# Don't use sudo when installing a gem via Rake
-SUDOLESS="true"
-
-# Git related environment variables
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWSTASHSTATE=true
-
-# Colors
-autoload -U colors
-colors
-setopt prompt_subst
-
+# Load Antigen
 source /usr/local/share/antigen/antigen.zsh
+
+# Anitgen in the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Antigen Bundles from robbyrussell's oh-my-zsh
+antigen bundle rbenv
+antigen bundle ruby
+
+# Antigen Bundles
+antigen bundle delynn/zsh-files
 antigen bundle lukechilds/zsh-nvm
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
 
-plugins=(atom brew bundler docker git-hubflow history rails rbenv zsh_reload delynn)
+# Antigen Theme
+antigen theme delynn/zsh-files themes/delynn
 
-export PATH="$HOME/bin:$HOME/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
-
-eval "$(docker-machine env default)"
-
-source $ZSH/oh-my-zsh.sh
+antigen apply

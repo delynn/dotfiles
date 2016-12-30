@@ -36,7 +36,7 @@ task default: 'install'
 
 task :hidden_files do
   replace_all  = false
-  files        = Dir['*'] - %w[.git .gitignore oh-my-zsh default-gems Rakefile README.md LICENSE]
+  files        = Dir['*'] - %w[.git .gitignore default-gems Rakefile README.md LICENSE]
 
   files.each do |file|
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}"))
@@ -68,20 +68,11 @@ task :homebrew do
   system %Q{ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"}
 end
 
-task link_files: [:hidden_files, :ohmyzsh_files, :rbenv_files]
+task link_files: [:hidden_files, :rbenv_files]
 
 task :ohmyzsh do
   if File.exist?(File.join(ENV['HOME'], 'src', 'oh-my-zsh')) == false
     system %Q{mkdir -p "$HOME/src" && git clone https://github.com/robbyrussell/oh-my-zsh.git "$HOME/src/oh-my-zsh"}
-  end
-end
-
-task :ohmyzsh_files do
-  %w(
-    oh-my-zsh/custom/plugins/delynn
-    oh-my-zsh/custom/delynn.zsh-theme
-  ).each do |file|
-    link_file(file, 'src/')
   end
 end
 

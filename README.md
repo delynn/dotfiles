@@ -1,10 +1,10 @@
-# DeLynn dotfiles
+# Dotfiles
 
 This is a collection of rake tasks and configuration files to set up a new system the way I like it. We start out by installing [homebrew](http://brew.sh).
 
 Then the following home-brew packages are installed:
 
-* [cask](http://caskroom.io)
+* [antigen](https://github.com/zsh-users/antigen)
 * [git](https://github.com/Homebrew/homebrew/blob/master/Library/Formula/git.rb)
 * [rbenv](https://github.com/Homebrew/homebrew/blob/master/Library/Formula/rbenv.rb)
 * [zsh](https://github.com/Homebrew/homebrew/blob/master/Library/Formula/zsh.rb)
