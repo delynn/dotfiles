@@ -14,6 +14,9 @@ autoload -U colors
 colors
 setopt prompt_subst
 
+source /usr/local/share/antigen/antigen.zsh
+antigen bundle lukechilds/zsh-nvm
+
 plugins=(atom brew bundler docker git-hubflow history rails rbenv zsh_reload delynn)
 
 export PATH="$HOME/bin:$HOME/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
