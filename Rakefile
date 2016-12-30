@@ -3,11 +3,17 @@ require 'erb'
 require 'fileutils'
 
 task :brew_packages do
-  brew *%w(git heroku imagemagick parity postgresql redis)
-end
-
-task :cask do
-  brew *%w(caskroom/cask/brew-cask)
+  brew *%w(
+    antigen
+    coreutils
+    git
+    git-lfs
+    heroku heroku-toolbelt
+    imagemagick
+    openssl
+    parity postgresql
+    redis
+  )
 end
 
 task :cask_packages do
