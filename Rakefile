@@ -31,7 +31,7 @@ task :cask_packages do
 end
 
 desc "install the dot files into user's home directory"
-task install: [:homebrew, :zsh, :ohmyzsh, :ruby, :link_files, :brew_packages, :cask, :cask_packages]
+task install: [:homebrew, :zsh, :ruby, :link_files, :brew_packages, :cask_packages]
 task default: 'install'
 
 task :hidden_files do
@@ -65,16 +65,13 @@ task :hidden_files do
 end
 
 task :homebrew do
-  system %Q{ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"}
+  system "brew --version &>/dev/null"
+  if $?.success? == false
+    system %Q{/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
+  end
 end
 
 task link_files: [:hidden_files, :rbenv_files]
-
-task :ohmyzsh do
-  if File.exist?(File.join(ENV['HOME'], 'src', 'oh-my-zsh')) == false
-    system %Q{mkdir -p "$HOME/src" && git clone https://github.com/robbyrussell/oh-my-zsh.git "$HOME/src/oh-my-zsh"}
-  end
-end
 
 task :rbenv_files do
   link_file("default-gems", nil, `rbenv root`.chomp)
