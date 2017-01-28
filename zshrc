@@ -5,13 +5,13 @@ source /usr/local/share/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 # Antigen Bundles from robbyrussell's oh-my-zsh
+antigen bundle bundler
 antigen bundle rbenv
 antigen bundle ruby
 
 # Antigen Bundles
 antigen bundle delynn/zsh-files
 antigen bundle lukechilds/zsh-nvm
-antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Antigen Theme
