@@ -20,13 +20,17 @@ task :cask_packages do
   cask *%w(
     atom
     backblaze betterzipql
-    dropbox
-    iterm2
+    cakebrew changes charles
+    dash dropbox
+    google-chrome google-drive
+    icons8 iterm2
     mailplane mojibar
-    pgadmin3
+    pgadmin3 postgres
     qlcolorcode qlimagesize quicklook-csv quicklook-json qlmarkdown qlstephen
-    time-sink textexpander
+    skype slack
+    textexpander time-sink
     vagrant virtualbox
+    wkhtmltopdf
   )
 end
 
