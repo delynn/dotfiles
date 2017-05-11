@@ -16,10 +16,11 @@ task :cask_packages do
     backblaze betterzipql
     dropbox
     iterm2
-    mailplane mojibar
-    pgadmin3
+    mailbox mailplane mojibar
+    paw pgadmin3
     qlcolorcode qlimagesize quicklook-csv quicklook-json qlmarkdown qlstephen
-    time-sink textexpander
+    slack
+    time-sink textexpander transmit
     vagrant virtualbox
   )
 end
