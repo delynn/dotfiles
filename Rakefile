@@ -3,35 +3,45 @@ require 'erb'
 require 'fileutils'
 
 task :brew_packages do
-  brew *%w(awscli git heroku imagemagick parity postgresql redis)
-end
-
-task :cask do
-  brew *%w(caskroom/cask/brew-cask)
+  brew *%w(
+    antigen
+    awscli
+    coreutils
+    git
+    git-lfs
+    heroku heroku-toolbelt
+    imagemagick
+    openssl
+    parity postgresql
+    redis
+  )
 end
 
 task :cask_packages do
   cask *%w(
     atom
     backblaze betterzipql
-    dropbox
-    iterm2
-    mailbox mailplane mojibar
-    paw pgadmin3
+    cakebrew changes charles
+    dash dropbox
+    google-chrome google-drive
+    icons8 iterm2
+    mailplane mojibar
+    paw postgres
     qlcolorcode qlimagesize quicklook-csv quicklook-json qlmarkdown qlstephen
     slack
-    time-sink textexpander transmit
+    textexpander time-sink transmit
     vagrant virtualbox
+    wkhtmltopdf
   )
 end
 
 desc "install the dot files into user's home directory"
-task install: [:homebrew, :zsh, :ohmyzsh, :ruby, :link_files, :brew_packages, :cask, :cask_packages]
+task install: [:homebrew, :zsh, :ruby, :link_files, :brew_packages, :cask_packages]
 task default: 'install'
 
 task :hidden_files do
   replace_all  = false
-  files        = Dir['*'] - %w[.git .gitignore oh-my-zsh default-gems Rakefile README.md LICENSE]
+  files        = Dir['*'] - %w[.git .gitignore default-gems Rakefile README.md LICENSE]
 
   files.each do |file|
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}"))
@@ -60,25 +70,13 @@ task :hidden_files do
 end
 
 task :homebrew do
-  system %Q{ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"}
-end
-
-task link_files: [:hidden_files, :ohmyzsh_files, :rbenv_files]
-
-task :ohmyzsh do
-  if File.exist?(File.join(ENV['HOME'], 'src', 'oh-my-zsh')) == false
-    system %Q{mkdir -p "$HOME/src" && git clone https://github.com/robbyrussell/oh-my-zsh.git "$HOME/src/oh-my-zsh"}
+  system "brew --version &>/dev/null"
+  if $?.success? == false
+    system %Q{/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
   end
 end
 
-task :ohmyzsh_files do
-  %w(
-    oh-my-zsh/custom/plugins/delynn
-    oh-my-zsh/custom/delynn.zsh-theme
-  ).each do |file|
-    link_file(file, 'src/')
-  end
-end
+task link_files: [:hidden_files, :rbenv_files]
 
 task :rbenv_files do
   link_file("default-gems", nil, `rbenv root`.chomp)
