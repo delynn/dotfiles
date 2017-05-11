@@ -2,10 +2,6 @@ c() { cd ~/src/$1; }
 _c() { _files -W ~/src -/; }
 compdef _c c
 
-h() { cd ~/$1; }
-_h() { _files -W ~/ -/; }
-compdef _h h
-
 function ruby-prompt(){
   if (( $+commands[rbenv] ))
   then
