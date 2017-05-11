@@ -5,6 +5,12 @@ def change_log(stream)
   ActiveRecord::Base.clear_active_connections!
 end
 
+def clear_sidekiq
+  if defined?(Sidekiq)
+    Sidekiq.redis { |conn| conn.flushdb }
+  end
+end
+
 def show_log
   change_log(STDOUT)
 end
