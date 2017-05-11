@@ -9,6 +9,7 @@
                    b = branch -v -a
                   br = branch
                  brm = !sh -c 'git branch -D $1 && git push origin :$1' -
+                 brp = remote prune origin
                    c = commit
                   cm = commit -m
                   ca = commit --amend
