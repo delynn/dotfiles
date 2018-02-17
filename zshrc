@@ -11,10 +11,12 @@ antigen bundle ruby
 
 # Antigen Bundles
 antigen bundle delynn/zsh-files
-antigen bundle lukechilds/zsh-nvm
+# antigen bundle lukechilds/zsh-nvm
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Antigen Theme
 antigen theme delynn/zsh-files themes/delynn
+
+antigen update
 
 antigen apply
