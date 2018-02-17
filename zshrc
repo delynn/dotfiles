@@ -5,7 +5,7 @@ source /usr/local/share/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 # Antigen Bundles from robbyrussell's oh-my-zsh
-antigen bundle cswl/zsh-rbenv
+antigen bundle rbenv
 antigen bundle bundler
 
 # Antigen Bundles
