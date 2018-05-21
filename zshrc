@@ -5,8 +5,10 @@ source /usr/local/share/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 # Antigen Bundles from robbyrussell's oh-my-zsh
-antigen bundle rbenv
 antigen bundle bundler
+antigen bundle rbenv
+antigen bundle ruby
+antigen bundle rails
 
 # Antigen Bundles
 antigen bundle delynn/zsh-files
@@ -15,7 +17,5 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Antigen Theme
 antigen theme delynn/zsh-files themes/delynn
-
-antigen update
 
 antigen apply
