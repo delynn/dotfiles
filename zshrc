@@ -19,3 +19,5 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen theme delynn/zsh-files themes/delynn
 
 antigen apply
+
+heroku autocomplete:script zsh
