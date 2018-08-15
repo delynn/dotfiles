@@ -4,16 +4,37 @@ require 'fileutils'
 
 task :brew_packages do
   brew *%w(
+    ack
     antigen
+    apple-gcc42
+    autoconf
     awscli
+    cctools
     coreutils
+    diff-so-fancy
+    freetype
+    gdbm
+    gettext
     git
     git-lfs
-    heroku heroku-toolbelt
+    heroku
+    heroku-node
+    icu4c
     imagemagick
+    jpeg
+    kr
+    mkcert
+    node
+    node-build
+    nodenv
     openssl
     parity postgresql
+    rbenv
+    rbenv-default-gems
+    rbenv-gem-rehash
     redis
+    ruby-build
+    zsh
   )
 end
 
