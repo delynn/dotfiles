@@ -2,65 +2,15 @@ require 'rake'
 require 'erb'
 require 'fileutils'
 
-task :brew_packages do
-  brew *%w(
-    ack
-    antigen
-    apple-gcc42
-    autoconf
-    awscli
-    cctools
-    coreutils
-    diff-so-fancy
-    freetype
-    gdbm
-    gettext
-    git
-    git-lfs
-    heroku
-    heroku-node
-    icu4c
-    imagemagick
-    jpeg
-    kr
-    mkcert
-    node
-    node-build
-    nodenv
-    openssl
-    parity postgresql
-    rbenv
-    rbenv-default-gems
-    rbenv-gem-rehash
-    redis
-    ruby-build
-    zsh
-  )
-end
-
-task :cask_packages do
-  cask *%w(
-    atom
-    backblaze betterzipql
-    cakebrew changes charles
-    dash dropbox
-    google-chrome google-drive
-    icons8 iterm2
-    mailplane mojibar
-    paw postgres
-    qlcolorcode qlimagesize quicklook-csv quicklook-json qlmarkdown qlstephen
-    slack
-    textexpander time-sink transmit
-    vagrant virtualbox
-    wkhtmltopdf
-  )
-end
-
 desc "install the dot files into user's home directory"
-task install: [:homebrew, :zsh, :ruby, :link_files, :brew_packages, :cask_packages]
+task install: [:homebrew, :link_hidden_files, :brew_bundle]
 task default: 'install'
 
-task :hidden_files do
+task :brew_bundle do
+  system %Q{brew bundle}
+end
+
+task :link_hidden_files do
   replace_all  = false
   files        = Dir['*'] - %w[.git .gitignore default-gems Rakefile README.md LICENSE]
 
@@ -97,16 +47,6 @@ task :homebrew do
   end
 end
 
-task link_files: [:hidden_files, :rbenv_files]
-
-task :rbenv_files do
-  link_file("default-gems", nil, `rbenv root`.chomp)
-end
-
-task :ruby do
-  brew *%w(rbenv ruby-build rbenv-default-gems rbenv-gem-rehash)
-end
-
 task :uninstall do
   Dir.chdir(`brew --prefix`.chomp) do
     system %Q{git checkout master}
@@ -129,23 +69,6 @@ task :uninstall do
   FileUtils.rm_rf(File.expand_path('~/src/oh-my-zsh/'))
   FileUtils.rm_rf(File.expand_path('~/Applications/*'))
   system %Q{chsh -s `which bash`}
-end
-
-task :zsh do
-  if ENV['SHELL'] !~ /zsh/
-    brew('zsh')
-    zsh = `command -v zsh`
-    system %Q{echo '#{zsh}' | sudo tee -a /etc/shells}
-    system %Q{chsh -s #{zsh}}
-  end
-end
-
-def brew(*args)
-  system %Q{brew install #{args.join(' ')}}
-end
-
-def cask(*args)
-  system %{brew cask install #{args.join(' ')}}
 end
 
 def link_file(file, prefix, path = ENV["HOME"])
