@@ -1,20 +1,7 @@
-#!/usr/bin/env ruby
-
-def change_log(stream)
-  ActiveRecord::Base.logger = Logger.new(stream)
-  ActiveRecord::Base.clear_active_connections!
-end
-
-def clear_sidekiq
-  if defined?(Sidekiq)
-    Sidekiq.redis { |conn| conn.flushdb }
-  end
-end
-
-def show_log
-  change_log(STDOUT)
-end
-
-def hide_log
-  change_log(nil)
-end
+--database=postgresql
+--webpack
+--skip-action-cable
+--skip-spring
+--skip-coffee
+--skip-turbolinks
+--template=~/src/dotfiles/rails/template.rb
