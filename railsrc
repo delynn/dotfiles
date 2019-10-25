@@ -1,7 +1,9 @@
 --database=postgresql
---webpack
 --skip-action-cable
+--skip-listen
+--skip-namespace
 --skip-spring
 --skip-coffee
 --skip-turbolinks
 --template=~/src/dotfiles/rails/template.rb
+--webpacker=stimulus
