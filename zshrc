@@ -21,3 +21,6 @@ antigen theme delynn/zsh-files themes/delynn
 antigen apply
 
 heroku autocomplete:script zsh
+
+# direnv
+eval "$(direnv hook zsh)"
