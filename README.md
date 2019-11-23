@@ -1,84 +1,21 @@
-# Dotfiles
+# My Dot Files
 
-This is a collection of rake tasks and configuration files to set up a new
-system the way I like it. We get started by downloading a
-[strap](https://github.com/mikemcquaid/strap) script that sets up
-[homebrew](http://brew.sh) and [cask](http://caskroom.io).
+These are all the files that are used to allow me to set up a new computer just the way I like it.
+It's very much dependant on [strap](https://github.com/mikemcquaid/strap), [homebrew](http://brew.sh),
+[cask](http://caskroom.io), and a [brewfile](https://github.com/delynn/homebrew-brewfile/blob/master/Brewfile).
+I also replace the Bash shell with ZSH and use [anitgen](https://github.com/zsh-users/antigen) to manage my
+[personal zsh plug-in](https://github.com/delynn/zsh-files) as well as other [oh-my-zsh](https://ohmyz.sh/) plugins.
 
-Then the following home-brew packages are installed:
+## Getting Started
 
-* [antigen](https://github.com/zsh-users/antigen)
-* [git](https://github.com/Homebrew/homebrew/blob/master/Library/Formula/git.rb)
-* [rbenv](https://github.com/Homebrew/homebrew/blob/master/Library/Formula/rbenv.rb)
-* [zsh](https://github.com/Homebrew/homebrew/blob/master/Library/Formula/zsh.rb)
+1. Download the [strap.sh](https://macos-strap.herokuapp.com/strap.sh) file, and save it to ~/Downloads
+2. Open Terminal.app and run `bash ~/Downloads/strap.sh`
+3. Take a break (or a power nap), while all the pre-determined dependencies and software is installed.
+4. Once the script completes, open a new Terminal (or iTerm) window and make sure the environment works properly.
+5. Remove the `strap.sh` file by running `rm -rf ~/Downloads/strap.sh`
 
-Finally, we install the following applications via cask:
+## Additional Info
 
-* [Atom](https://atom.io)
-* [Backblaze](https://www.backblaze.com)
-* [Charles](https://charlesproxy.com)
-* [Dropbox](https://www.dropbox.com)
-* [Google Chrome](https://www.google.com/chrome/)
-* [iTerm2](http://iterm2.com)
-* [Mailbox](https://www.mailboxapp.com)
-* [Mailplane](http://mailplaneapp.com)
-* [Mojibar](https://github.com/muan/mojibar)
-* [Paw](https://luckymarmot.com)
-* [PGAdmin3](http://www.pgadmin.org/download/)
-* [Slack](https://slack.com/)
-* [Text Expander](http://smilesoftware.com/TextExpander/index.html)
-* [Time Sink](http://manytricks.com/timesink)
-* [Transmit](https://panic.com/transmit/)
-* [Vagrant](https://www.vagrantup.com/)
-* [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-* [A](http://macitbetter.com/BetterZip-Quick-Look-Generator/) [rather](https://code.google.com/p/qlcolorcode/) [large](https://github.com/Nyx0uf/qlImageSize) [collection](https://github.com/p2/quicklook-csv) [of](http://www.sagtau.com/quicklookjson.html) [QuickLook](https://github.com/toland/qlmarkdown) [plugins](https://github.com/whomwah/qlstephen)
-
-## Installation
-
-Run the following commands in your terminal. Check out the [Rakefile](https://github.com/delynn/dotfiles/blob/master/Rakefile) to see exactly what it does.
-
-```terminal
-$ open https://osx-strap.herokuapp.com/strap.sh
-mkdir ~/src
-git clone git://github.com/delynn/dotfiles ~/src/dotfiles
-cd ~/src/dotfiles
-rake install
-```
-
-After installing, open a new terminal window to see the effects. Feel free to customize the .zshrc file to match your preference.
-
-## Features
-
-Many of the following features are added through the "delynn" Oh My ZSH plugin.
-
-I normally place all of my coding projects in ~/src, so this directory can easily
-be accessed (and tab completed) with the "c" command.
-
-```terminal
-c dot<tab>
-```
-
-There is also an "h" command which behaves similar, but acts on the home path.
-
-```terminal
-h doc<tab>
-```
-
-Tab completion is also added to rake and cap commands:
-
-```terminal
-rake db:mi<tab>
-cap de<tab>
-```
-
-To speed things up, the results are cached in local .rake_tasks~ and .cap_tasks~. It is smart enough to expire the cache automatically in most cases, but you can simply remove the files to flush the cache.
-
-## Uninstall
-
-To uninstall, run the following command from a terminal window. **Note:** this will reset _everything_ associated with your profile.
-
-```terminal
-cd ~/src/dotfiles && rake uninstall
-```
-
-Then open a new terminal window to see the effects.
+The `script/setup` Ruby script is run at the start of the strap process, and is responsible for creating symlinks
+to all the files in the `files` directory into the home directory. There are also a `bootstrap` and `strap-after-setup`
+scripts that are also run by stap, but these files are just stubs at this point as I have not yet found a need for them.

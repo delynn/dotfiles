@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+
+def link_file(source, destination)
+  if source =~ /.erb$/
+    puts "generating #{destination}"
+    File.open(destination, 'w') do |new_file|
+      new_file.write ERB.new(File.read(source)).result(binding)
+    end
+  else
+    puts "linking #{destination} to #{$PWD}/#{source}"
+    system %Q{ln -s "$PWD/#{source}" "#{destination}"}
+  end
+end
+
+def replace_file(source, destination)
+  system %Q{rm -rf "#{destination}"}
+  link_file(source, destination)
+end
+
+replace_all = false
+
+Dir['files/*'].each do |source|
+  destination = File.join(ENV['HOME'], ".#{source.sub('files/', '').sub(/\.erb$/, '')}")
+
+  if File.file?(destination) || File.symlink?(destination)
+    if File.identical?(source, destination)
+      puts "#{source} is identical to #{destination}"
+    elsif replace_all
+      replace_file(source, destination)
+    else
+      print "overwrite #{destination}? [ynaq] "
+      case $stdin.gets.chomp
+      when 'a'
+        replace_all = true
+        replace_file(source, destination)
+      when 'y'
+        replace_file(source, destination)
+      when 'q'
+        exit
+      else
+        puts "skipping #{destination}"
+      end
+    end
+  else
+    link_file(source, destination)
+  end
+end
