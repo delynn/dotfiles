@@ -19,7 +19,7 @@ end
 
 replace_all = false
 
-Dir['files/*'].each do |source|
+Dir['files/*'].reject { |f| f.end_with?(".plist") }.each do |source|
   destination = File.join(ENV['HOME'], ".#{source.sub('files/', '').sub(/\.erb$/, '')}")
 
   if File.file?(destination) || File.symlink?(destination)
