@@ -22,5 +22,3 @@ begin
 rescue LoadError => error
   warn "Could not load the irbtools gem."
 end
-
-load "#{ENV['HOME']}/.railsrc" if defined?(Rails)
