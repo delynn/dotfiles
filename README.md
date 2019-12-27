@@ -9,10 +9,11 @@ I also replace the Bash shell with ZSH and use [anitgen](https://github.com/zsh-
 ## Getting Started
 
 1. Download the [strap.sh](https://macos-strap.herokuapp.com/strap.sh) file, and save it to ~/Downloads
-2. Open Terminal.app and run `bash ~/Downloads/strap.sh`
-3. Take a break (or a power nap), while all the pre-determined dependencies and software is installed.
-4. Once the script completes, open a new Terminal (or iTerm) window and make sure the environment works properly.
-5. Remove the `strap.sh` file by running `rm -rf ~/Downloads/strap.sh`
+1. Change the URL being used to download git projects by running `sed -i '' 's/https:\/\/github\.com\/$STRAP_GITHUB_USER/git@github.com:\/$STRAP_GITHUB_USER/' ~/Downloads/strap.sh`
+1. Open Terminal.app and run `bash ~/Downloads/strap.sh`
+1. Take a break (or a power nap), while all the pre-determined dependencies and software is installed.
+1. Once the script completes, open a new Terminal (or iTerm) window and make sure the environment works properly.
+1. Remove the `strap.sh` file by running `rm -rf ~/Downloads/strap.sh`
 
 ## Additional Info
 
