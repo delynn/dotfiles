@@ -17,5 +17,7 @@ I also replace the Bash shell with ZSH and use [anitgen](https://github.com/zsh-
 ## Additional Info
 
 The `script/setup` Ruby script is run at the start of the strap process, and is responsible for creating symlinks
-to all the files in the `files` directory into the home directory. There are also a `bootstrap` and `strap-after-setup`
-scripts that are also run by stap, but these files are just stubs at this point as I have not yet found a need for them.
+to all the files in the `files` directory into the home directory. The `strap-after-setup` script is run after
+strap completes and is responsible for installing python and ruby along with default packages for those languages.
+There is also a `bootstrap` script that strap can run prior to the setup process, but this file is just a stubs
+at this point as I have not yet found a need for it.
