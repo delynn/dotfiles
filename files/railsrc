@@ -5,5 +5,5 @@
 --skip-spring
 --skip-coffee
 --skip-turbolinks
---template=~/src/dotfiles/rails/template.rb
+--template=~/.dotfiles/rails/template.rb
 --webpacker=stimulus
