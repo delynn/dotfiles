@@ -6,6 +6,7 @@ antigen use oh-my-zsh
 
 # Antigen Bundles from robbyrussell's oh-my-zsh
 antigen bundle bundler
+antigen bundle pyenv
 antigen bundle rbenv
 antigen bundle ruby
 antigen bundle rails
