@@ -1,15 +1,12 @@
+########50 characters############################
+[BUGFIX|ENHANCEMENT|ISSUE|FEATURE]: 
 
-## A 50-character subject line should go above ##
-### The remaining "longer description" should wrap at 72-characters ###
+########72 characters##################################################
+Problem
+# Problem, Task, Reason for Commit
 
-Issue: #
+Solution
+# Solution or List of Changes
 
-Why is this commit necessary?
-  * 
-
-How does this commit address the issue?
-  * 
-
-What side effects does this commit have?
-  * 
-
+Note
+# Special instructions, testing steps, rake, etc
