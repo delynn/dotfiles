@@ -25,3 +25,6 @@ heroku autocomplete:script zsh
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# Added by Krypton
+export GPG_TTY=$(tty)
