@@ -73,6 +73,7 @@
            untracked = blue bold
 [commit]
             template = ~/.gitmessage
+	gpgSign = true
 
 [core]
         excludesfile = ~/.gitignore
@@ -106,3 +107,7 @@
                 user = delynn
                 site = https://github.com
             endpoint = https://api.github.com
+[gpg]
+	program = /usr/local/bin/krgpg
+[tag]
+	forceSignAnnotated = true
