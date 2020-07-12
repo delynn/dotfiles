@@ -73,6 +73,7 @@
            untracked = blue bold
 [commit]
             template = ~/.gitmessage
+	gpgSign = true
 
 [core]
         excludesfile = ~/.gitignore
@@ -81,7 +82,7 @@
           whitespace = space-before-tab, trailing-space
             autocrlf = input
 	             pager = diff-so-fancy | less --tabs=2 -RFX
-              editor = /usr/bin/env atom --wait
+              editor = /usr/bin/env code --wait
 
 [credential]
 	            helper = osxkeychain
@@ -106,3 +107,7 @@
                 user = delynn
                 site = https://github.com
             endpoint = https://api.github.com
+[gpg]
+	program = /usr/local/bin/krgpg
+[tag]
+	forceSignAnnotated = true
