@@ -5,11 +5,13 @@ source /usr/local/share/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 # Antigen Bundles from robbyrussell's oh-my-zsh
+antigen bundle brew
 antigen bundle bundler
 antigen bundle pyenv
 antigen bundle rbenv
 antigen bundle ruby
 antigen bundle rails
+antigen bundle vscode
 
 # Antigen Bundles
 antigen bundle delynn/zsh-files

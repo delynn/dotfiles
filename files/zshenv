@@ -1,7 +1,7 @@
 export HOMEBREW_BUNDLE_FILE="~/.Brewfile"
 export DOCKER_HOST='tcp://docker.local:2375'
 export DISABLE_SPRING=true
-export EDITOR='atom'
+export EDITOR='code'
 
 # Ensure languages are set
 export LANG=en_US.UTF-8
